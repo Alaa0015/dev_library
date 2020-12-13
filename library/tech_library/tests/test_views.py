@@ -18,14 +18,12 @@ class HomeViewTest(TestCase):
         self.assertTemplateUsed(response, 'base.html')
         
     def test_view_menu(self):
-        # Get second page and confirm it has (exactly) remaining 3 items
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
         print("response.context",response.context)
         self.assertTrue(response.context['menu'],self.menu)
 
     def test_view_content(self):
-        # Get second page and confirm it has (exactly) remaining 3 items
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
         print("response.context",response.context)
@@ -33,7 +31,6 @@ class HomeViewTest(TestCase):
 
 
     def test_view_page_title(self):
-        # Get second page and confirm it has (exactly) remaining 3 items
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
         print("response.context",response.context)
