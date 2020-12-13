@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block page_title %} {{page_title}} {% endblock %}
+{% block content %}{{content}} {% endblock %}
+{% block nav %}
+<ul>
+    {% for dev in developers %}
+    <li><a href="{% url "developer_detatils" dev.id %}">>{{ dev.name }}</a></li>
+    {% empty %}
+    <p class="empty">No devs founded {{ dev_details.name }}.</p>
+    {% endfor %}
+</ul> {% endblock %}
