@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block page_title %} {{page_title}} {% endblock %}
+{% block main_nav %}
+<ul>
+    {% for element, element_url in menu.items %}
+    <li><a href="{{element_url}}">>{{ element }}</a></li>
+    {% empty %}
+    <p class="empty">No field founded {{ field.name }}.</p>
+    {% endfor %}
+</ul> {% endblock %}
+
+{% block content %}{{content}} {% endblock %}
