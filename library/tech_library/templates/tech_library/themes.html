@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block page_title %} {{page_title}} {% endblock %}
+{% block content %}{{content}} {% endblock %}
+{% block nav %}
+<ul>
+    {% for theme in themes %}
+    <li><a href="{% url "display_themes_details" theme.id %}">>{{ theme.name }}</a></li>
+    {% empty %}
+    <p class="empty">No themes founded.</p>
+    {% endfor %}
+</ul> {% endblock %}

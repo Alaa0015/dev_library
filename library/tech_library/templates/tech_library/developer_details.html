@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block page_title %} Developer: {{dev_details.name}} {% endblock %}
+{% block content %}{{dev_details.description}}
+
+{% for topic in topics %}
+<li><a>>{{ topics.title }}</a></li>
+{% empty %}
+<p class="empty">No Topic founded for{{ dev_details.name }}.</p>
+
+{% endfor %}
+{% endblock %}

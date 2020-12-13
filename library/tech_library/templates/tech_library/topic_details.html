@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block page_title %} Topic: {{topic.title}} {% endblock %}
+{% block content %}{{topic.description }}
+</p>Writed by :
+
+{% for dev in devs %}
+<li><a href="{% url "developer_detatils" dev.id %}">>{{ dev.name }}</a></li>
+{% empty %}
+<p class="empty">anonymos </p>
+
+{% endfor %}
+
+
+</p>Themes:
+{% for theme in themes %}
+<li><a href="{% url "display_themes_details" theme.id %}">>{{ theme.name }}</a></li>
+{% empty %}
+<p class="empty">anonymos </p>
+{% endfor %}
+{% endblock %}
