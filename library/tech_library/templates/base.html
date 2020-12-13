@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<header>
+    <h1>Welcome to Tekyn tech library</h1>
+    Menu
+    {% block main_nav %}
+    <ul>
+        {% load static %}
+        <li><a href="/home/">Home</a></li>
+        <li><a href="/home/devs/">devs</a></li>
+        <li><a href="/home/fields/">Tech-fields</a></li>
+    </ul>
+    {% endblock %}
+</header>
+
+<body>
+    {% block page_title %}{% endblock %}
+
+    {% block nav %}
+    <ul>
+    </ul>
+    {% endblock %}
+
+    {% block content %}{% endblock %}
+
+</body>
+
+<footer>© Dev PROD</footer>
+
+</html>
